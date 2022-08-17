@@ -1,7 +1,7 @@
 # TA25-SpringREST-ER
 ### Detalles a tener en cuenta:
 ```
-En este proyecto debido a un error que creaba una columna de más en la tabla débil de la relación de 1 a N , he tenido que modificar algunas claves primarias solicitadas en el Ej2 i Ej3 , pasando estas a ser un campo normal y teniendo que poner un id autoincremental como tal para que Spring no diese problemas.
+En este proyecto debido a un error que creaba una columna de más en la tabla débil de la relación de 1 a N , he tenido que modificar algunas claves primarias solicitadas en el Ej2 y Ej3 , pasando estas a ser un campo normal y teniendo que poner un id autoincremental como PK para que Spring no diese problemas.
 ```
 ### URIs endpoints:
 #### URIs endpoints Ejercicio1 
