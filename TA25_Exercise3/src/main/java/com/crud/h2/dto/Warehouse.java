@@ -19,14 +19,16 @@ public class Warehouse {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//Find the last value and increment from final id of db
-	private Long code;
+	private Long id;
+	
+	private int code;
 	
 	private String place;
 	
 	private int capacity; 
 	
 	 @OneToMany
-	 @JoinColumn(name="code")
+	 @JoinColumn(name="id")
 	 private List<Box> box;	
 	 
 	 /**Constructors */
@@ -34,32 +36,51 @@ public class Warehouse {
 	 public Warehouse() {
 		 
 	 }
-
+	
 	/**
+	 * @param id
 	 * @param code
 	 * @param place
 	 * @param capacity
 	 */
-	public Warehouse(Long code, String place, int capacity) {
+	public Warehouse(Long id, int code, String place, int capacity) {
+		this.id = id;
 		this.code = code;
 		this.place = place;
 		this.capacity = capacity;
 	}
-	
+
+
+
+
+
 	/**Getters y Setters*/
 
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the code
 	 */
-	public Long getCode() {
+	public int getCode() {
 		return code;
 	}
 
 	/**
 	 * @param code the code to set
 	 */
-	public void setCode(Long code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 
@@ -95,7 +116,7 @@ public class Warehouse {
 	 * @return the box
 	 */
 	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Box")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Box")	
 	public List<Box> getBox() {
 		return box;
 	}
@@ -106,12 +127,17 @@ public class Warehouse {
 	public void setBox(List<Box> box) {
 		this.box = box;
 	}
+
+
 	
 	//Method printing data by console
 	@Override
 	public String toString() {
 		return "Almacen [codigo=" + code + ", lugar=" + place + ", capacidad=" + capacity;
 	}
+
+	
+
 
 	 
 	 

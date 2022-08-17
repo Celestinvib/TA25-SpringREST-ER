@@ -28,9 +28,9 @@ public class BoxServiceImpl implements IBoxService{
 	}
 
 	@Override
-	public Box boxXID(Long refNumber) {
+	public Box boxXID(Long id) {
 		
-		return iBoxDAO.findById(refNumber).get();		
+		return iBoxDAO.findById(id).get();		
 	}
 
 	@Override
@@ -40,9 +40,9 @@ public class BoxServiceImpl implements IBoxService{
 	}
 
 	@Override
-	public void deleteBox(Long refNumber) {
+	public void deleteBox(Long id) {
 		
-		iBoxDAO.deleteById(refNumber);
+		iBoxDAO.deleteById(id);
 	}
 	
 	

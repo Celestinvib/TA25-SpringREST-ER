@@ -34,11 +34,11 @@ public class BoxController {
 	}
 	
 	@GetMapping("/cajas/{id}")
-	public Box boxXID(@PathVariable(name="code") Long refNumber) {
+	public Box boxXID(@PathVariable(name="id") Long id) {
 		
 		Box box_xrefNumber= new Box();
 		
-		box_xrefNumber= boxServiceImpl.boxXID(refNumber);
+		box_xrefNumber= boxServiceImpl.boxXID(id);
 		
 		System.out.println("Caja XID: "+box_xrefNumber);
 		
@@ -46,12 +46,12 @@ public class BoxController {
 	}
 	
 	@PutMapping("/cajas/{id}")
-	public Box updateBox(@PathVariable(name="refNumber")Long refNumber,@RequestBody Box box) {
+	public Box updateBox(@PathVariable(name="id")Long id,@RequestBody Box box) {
 		
 		Box boxSelected= new Box();
 		Box boxUpdated = new Box();
 		
-		boxSelected= boxServiceImpl.boxXID(refNumber);
+		boxSelected= boxServiceImpl.boxXID(id);
 		
 		boxSelected.setContent(box.getContent());
 		boxSelected.setValue(box.getValue());
@@ -65,7 +65,7 @@ public class BoxController {
 	}
 	
 	@DeleteMapping("/cajas/{id}")
-	public void deleteBox(@PathVariable(name="refNumber")Long refNumber) {
-		boxServiceImpl.deleteBox(refNumber);
+	public void deleteBox(@PathVariable(name="id")Long id) {
+		boxServiceImpl.deleteBox(id);
 	}	
 }

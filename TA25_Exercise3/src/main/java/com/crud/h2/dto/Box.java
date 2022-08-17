@@ -1,6 +1,8 @@
 package com.crud.h2.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -10,6 +12,9 @@ import javax.persistence.Table;
 @Table(name="boxes")
 public class Box {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//Find the last value and increment from final id of db
+	private int id;
+	
 	private int refNumber;
 
 	private String content;
@@ -24,21 +29,34 @@ public class Box {
 	public Box() {
 	}
 
-
 	/**
+	 * @param id
 	 * @param refNumber
 	 * @param content
 	 * @param value
-	 * @param warehouse
 	 */
-	public Box(int refNumber, String content, int value, Warehouse warehouse) {
+	public Box(int id, int refNumber, String content, int value) {
+		this.id = id;
 		this.refNumber = refNumber;
 		this.content = content;
 		this.value = value;
-		this.warehouse = warehouse;
+	}
+	
+	/**Getters y Setters*/
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
 	}
 
-	/**Getters y Setters*/
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the refNumber
@@ -47,14 +65,12 @@ public class Box {
 		return refNumber;
 	}
 
-
 	/**
 	 * @param refNumber the refNumber to set
 	 */
 	public void setRefNumber(int refNumber) {
 		this.refNumber = refNumber;
 	}
-
 
 	/**
 	 * @return the content
@@ -63,14 +79,12 @@ public class Box {
 		return content;
 	}
 
-
 	/**
 	 * @param content the content to set
 	 */
 	public void setContent(String content) {
 		this.content = content;
 	}
-
 
 	/**
 	 * @return the value
@@ -79,14 +93,12 @@ public class Box {
 		return value;
 	}
 
-
 	/**
 	 * @param value the value to set
 	 */
 	public void setValue(int value) {
 		this.value = value;
 	}
-
 
 	/**
 	 * @return the warehouse
@@ -95,19 +107,19 @@ public class Box {
 		return warehouse;
 	}
 
-
 	/**
 	 * @param warehouse the warehouse to set
 	 */
 	public void setWarehouse(Warehouse warehouse) {
 		this.warehouse = warehouse;
 	}
-	
+		
 	//Method printing data by console
-		@Override
-		public String toString() {
-			return "Caja [numReferencia=" + refNumber + ", contenido=" + content + ", valor=" + value+ ", almacen=" + warehouse;
-		}
+	@Override
+	public String toString() {
+		return "Caja [numReferencia=" + refNumber + ", contenido=" + content + ", valor=" + value+ ", almacen=" + warehouse;
+	}
+
 	
 	
 	

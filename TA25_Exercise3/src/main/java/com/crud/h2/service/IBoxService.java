@@ -10,9 +10,9 @@ public interface IBoxService {
 	
 	public Box saveBox(Box box);//Save a new box "CREATE"
 	
-	public Box boxXID(Long refNumber); //Read data from a box "READ"
+	public Box boxXID(Long id); //Read data from a box "READ"
 			
 	public Box updateBox(Box box); //Update box data "UPDATE"
 	
-	public void deleteBox(Long refNumber);// Delete a box via id "DELETE"
+	public void deleteBox(Long id);// Delete a box via id "DELETE"
 }
