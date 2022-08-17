@@ -1,1 +1,71 @@
 # TA25-SpringREST-ER
+### Detalles a tener en cuenta:
+```
+En este proyecto debido a un error que creaba una columna de más en la tabla débil de la relación de 1 a N , he tenido que modificar algunas claves primarias solicitadas en el Ej2 i Ej3 , pasando estas a ser un campo normal y teniendo que poner un id autoincremental como tal para que Spring no diese problemas.
+```
+### URIs endpoints:
+#### URIs endpoints Ejercicio1 
+```
+Fabricantes
+GET       /api/fabricantes
+POST      /api/fabricantes
+GET       /api/fabricantes/{id}
+PUT       /api/fabricantes/{id}
+DELETE    /api/fabricantes/{id}
+
+Articulos
+GET       /api/articulos
+POST      /api/fabricantes
+GET       /api/fabricantes/{id}
+PUT       /api/fabricantes/{id}
+DELETE    /api/fabricantes/{id}
+```
+#### URIs endpoints Ejercicio2 
+```
+Departamentos
+GET       /api/departamentos
+POST      /api/departamentos
+GET       /api/departamentos/{id}
+PUT       /api/departamentos/{id}
+DELETE    /api/departamentos/{id}
+
+Empleados
+GET       /api/empleados
+POST      /api/empleados
+GET       /api/empleados/{id}
+PUT       /api/empleados/{id}
+DELETE    /api/empleados/{id}
+```
+#### URIs endpoints Ejercicio3 
+```
+Almacenes
+GET       /api/almacenes
+POST      /api/almacenes
+GET       /api/almacenes/{id}
+PUT       /api/almacenes/{id}
+DELETE    /api/almacenes/{id}
+
+Cajas
+GET       /api/cajas
+POST      /api/cajas
+GET       /api/cajas/{id}
+PUT       /api/cajas/{id}
+DELETE    /api/cajas/{id}
+```
+#### URIs endpoints Ejercicio4 
+```
+Peliculas
+GET       /api/peliculas
+POST      /api/peliculas
+GET       /api/peliculas/{id}
+PUT       /api/peliculas/{id}
+DELETE    /api/peliculas/{id}
+
+Salas
+GET       /api/salas
+POST      /api/salas
+GET       /api/salas/{id}
+PUT       /api/salas/{id}
+DELETE    /api/salas/{id}
+```
+
