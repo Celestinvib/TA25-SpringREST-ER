@@ -22,18 +22,18 @@ public class DepartmentController {
 	@Autowired
 	DepartmentServiceImpl departmentServiceImpl;
 	
-	@GetMapping("/departamento")
+	@GetMapping("/departamentos")
 	public List<Department> listDepartments(){
 		return departmentServiceImpl.listDepartments();
 	}
 	
-	@PostMapping("/departamento")
+	@PostMapping("/departamentos")
 	public Department saveManufacturer(@RequestBody Department department) {
 		
 		return departmentServiceImpl.saveDepartment(department);
 	}
 	
-	@GetMapping("/departamento/{id}")
+	@GetMapping("/departamentos/{id}")
 	public Department manufacturerXID(@PathVariable(name="id") Long id) {
 		
 		Department department_xid= new Department();
@@ -45,7 +45,7 @@ public class DepartmentController {
 		return department_xid;
 	}
 	
-	@PutMapping("/departamento/{id}")
+	@PutMapping("/departamentos/{id}")
 	public Department updateManufacturer(@PathVariable(name="id")Long id,@RequestBody Department department) {
 		
 		Department departmentSelected= new Department();
@@ -63,7 +63,7 @@ public class DepartmentController {
 		return departmentUpdated;
 	}
 	
-	@DeleteMapping("/departamento/{id}")
+	@DeleteMapping("/departamentos/{id}")
 	public void deleteManufacturer(@PathVariable(name="id")Long id) {
 		departmentServiceImpl.deleteDepartment(id);
 	}	

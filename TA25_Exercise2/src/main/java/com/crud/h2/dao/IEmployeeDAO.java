@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.crud.h2.dto.Employee;
 
-public interface IEmployeeDAO extends JpaRepository<Employee, String>{
+public interface IEmployeeDAO extends JpaRepository<Employee, Long>{
 
 }
 

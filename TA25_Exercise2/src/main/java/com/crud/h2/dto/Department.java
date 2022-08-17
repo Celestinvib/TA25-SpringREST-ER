@@ -21,71 +21,78 @@ public class Department {
 	/**Attributes */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//Find the last value and increment from final id of db
-	private Long code;
-
+	private Long id;
+	
 	private String name;
 	
 	private int budget;
 
     @OneToMany
-    @JoinColumn(name="code") 
+    @JoinColumn(name="id") 
     private List<Employee> employee;
 
     /**Constructors */
-    
-    public Department() {
-    	
-    }
+	public Department() {
+	}
+
 	/**
-	 * @param code
+	 * @param id
 	 * @param name
 	 * @param budget
 	 * @param employee
 	 */
-	public Department(Long code, String name, int budget) {
-		this.code = code;
+	public Department(Long id, String name, int budget, List<Employee> employee) {
+		this.id = id;
 		this.name = name;
 		this.budget = budget;
+		this.employee = employee;
 	}
-	
+
+ 
 	/**Getters y Setters*/
+	
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
 
 	/**
-	 * @return the code
+	 * @param id the id to set
 	 */
-	public Long getCode() {
-		return code;
+	public void setId(Long id) {
+		this.id = id;
 	}
-	/**
-	 * @param code the code to set
-	 */
-	public void setCode(Long code) {
-		this.code = code;
-	}
+
 	/**
 	 * @return the name
 	 */
 	public String getName() {
 		return name;
 	}
+
 	/**
 	 * @param name the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	/**
 	 * @return the budget
 	 */
 	public int getBudget() {
 		return budget;
 	}
+
 	/**
 	 * @param budget the budget to set
 	 */
 	public void setBudget(int budget) {
 		this.budget = budget;
 	}
+
 	/**
 	 * @return the employee
 	 */
@@ -94,17 +101,19 @@ public class Department {
 	public List<Employee> getEmployee() {
 		return employee;
 	}
+
 	/**
 	 * @param employee the employee to set
 	 */
 	public void setEmployee(List<Employee> employee) {
 		this.employee = employee;
 	}
-    
+
+	 
 	//Method printing data by console
 	@Override
 	public String toString() {
-		return "Departamento [codigo=" + code + ", nombre=" + name + ", presupuesto=" + budget;
+		return "Departamento [codigo=" + id + ", nombre=" + name + ", presupuesto=" + budget;
 	}
 
 	

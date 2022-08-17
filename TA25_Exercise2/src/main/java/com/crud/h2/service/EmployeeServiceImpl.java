@@ -30,9 +30,9 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	}
 
 	@Override
-	public Employee employeeXDNI(String DNI) {
+	public Employee employeeXId(Long id) {
 		
-		return iEmployeeDAO.findById(DNI).get();
+		return iEmployeeDAO.findById(id).get();
 	}
 
 	@Override
@@ -42,9 +42,9 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	}
 
 	@Override
-	public void deleteEmployee(String DNI) {
+	public void deleteEmployee(Long id) {
 		
-		iEmployeeDAO.deleteById(DNI);
+		iEmployeeDAO.deleteById(id);
 	}
 	
 	

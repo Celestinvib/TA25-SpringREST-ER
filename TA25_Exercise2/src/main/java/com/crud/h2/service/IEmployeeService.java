@@ -10,9 +10,9 @@ public interface IEmployeeService {
 	
 	public Employee saveEmployee(Employee employee);	//Save a new employee "CREATE"
 	
-	public Employee employeeXDNI(String DNI); //Read data from a employee "READ"
+	public Employee employeeXId(Long id); //Read data from a employee "READ"
 			
 	public Employee updateEmployee(Employee employee); //Update employee data "UPDATE"
 	
-	public void deleteEmployee(String DNI);// Delete a employee via id "DELETE"
+	public void deleteEmployee(Long id);// Delete a employee via id "DELETE"
 }

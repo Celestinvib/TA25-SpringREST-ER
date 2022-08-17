@@ -3,4 +3,4 @@ insert into departments (name,budget) values('Testing',40000);
 
 insert into employees (DNI,name,surnames,dpt_code) values('3775629A','Mike','Wasoski Jimenez',1);
 insert into employees (DNI,name,surnames,dpt_code) values('3652126F','Logan','Paul',1);
-insert into employees (DNI,name,surnames,dpt_code) values('3781572V','Carla','Garcia Requena',2);
+/*insert into employees (DNI,name,surnames,dpt_code) values('3781572V','Carla','Garcia Requena',2);*/

@@ -23,36 +23,36 @@ public class EmployeeController {
 	EmployeeServiceImpl employeeServiceImpl;
 	
 	
-	@GetMapping("/empleado")
+	@GetMapping("/empleados")
 	public List<Employee> listEmployees(){
 		return employeeServiceImpl.listEmployees();
 	}
 	
-	@PostMapping("/empleado")
+	@PostMapping("/empleados")
 	public Employee saveEmployee(@RequestBody Employee employee) {
 		
 		return employeeServiceImpl.saveEmployee(employee);
 	}
 	
-	@GetMapping("/empleado/{DNI}")
-	public Employee EmployeeXID(@PathVariable(name="DNI") String DNI) {
+	@GetMapping("/empleados/{id}")
+	public Employee EmployeeXID(@PathVariable(name="id") Long id) {
 		
 		Employee employee_xDNI= new Employee();
 		
-		employee_xDNI= employeeServiceImpl.employeeXDNI(DNI);
+		employee_xDNI= employeeServiceImpl.employeeXId(id);
 		
 		System.out.println("Empleado XID: "+employee_xDNI);
 		
 		return employee_xDNI;
 	}
 	
-	@PutMapping("/empleado/{DNI}")
-	public Employee updateEmployee(@PathVariable(name="DNI") String DNI,@RequestBody Employee employee) {
+	@PutMapping("/empleados/{id}")
+	public Employee updateEmployee(@PathVariable(name="id") Long id,@RequestBody Employee employee) {
 		
 		Employee employeeSelected= new Employee();
 		Employee employeetUpdated = new Employee();
 		
-		employeeSelected= employeeServiceImpl.employeeXDNI(DNI);
+		employeeSelected= employeeServiceImpl.employeeXId(id);
 		
 		employeeSelected.setName(employee.getName());
 		employeeSelected.setSurnames(employee.getSurnames());
@@ -65,8 +65,8 @@ public class EmployeeController {
 		return employeetUpdated;
 	}
 	
-	@DeleteMapping("/empleado/{DNI}")
-	public void deleteEmployee(@PathVariable(name="DNI") String DNI) {
-		employeeServiceImpl.deleteEmployee(DNI);
+	@DeleteMapping("/empleados/{id}")
+	public void deleteEmployee(@PathVariable(name="id") Long id) {
+		employeeServiceImpl.deleteEmployee(id);
 	}	
 }
