@@ -11,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -20,12 +23,12 @@ public class Manufacturer {
 	/**Attributes */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//Find the last value and increment from final id of db
-	private Long code;
+	private Long id;
 	
 	private String name;
 	
     @OneToMany
-    @JoinColumn(name="code")
+    @JoinColumn(name="id")
     private List<Item> item;
 
 	/**Constructors */
@@ -36,8 +39,8 @@ public class Manufacturer {
 	 * @param code
 	 * @param name
 	 */
-	public Manufacturer(Long code, String name) {
-		this.code = code;
+	public Manufacturer(Long id, String name) {
+		this.id = id;
 		this.name = name;
 	}
 
@@ -48,15 +51,15 @@ public class Manufacturer {
 	/**
 	 * @return the code
 	 */
-	public Long getCode() {
-		return code;
+	public Long getId() {
+		return id;
 	}
 
 	/**
 	 * @param code the code to set
 	 */
-	public void setCode(Long code) {
-		this.code = code;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	/**
@@ -93,7 +96,7 @@ public class Manufacturer {
 	//Method printing data by console
 	@Override
 	public String toString() {
-		return "Fabricante [codigo=" + code + ", nombre=" + name;
+		return "Fabricante [codigo=" + id + ", nombre=" + name;
 	}
 	
 }

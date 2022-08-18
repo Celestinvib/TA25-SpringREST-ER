@@ -15,7 +15,7 @@ public class Item {
 	/**Attributes */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//Find the last value and increment from final id of db
-	private Long code;
+	private Long id;
 	
 	private String name;
 
@@ -37,8 +37,8 @@ public class Item {
 	 * @param price
 	 * @param manufacturer
 	 */
-	public Item(Long code, String name, int price, Manufacturer manufacturer) {
-		this.code = code;
+	public Item(Long id, String name, int price, Manufacturer manufacturer) {
+		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.manufacturer = manufacturer;
@@ -49,14 +49,14 @@ public class Item {
 	/**
 	 * @return the code
 	 */
-	public Long getCode() {
-		return code;
+	public Long getId() {
+		return id;
 	}
 	/**
 	 * @param code the code to set
 	 */
-	public void setCode(Long code) {
-		this.code = code;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	/**
 	 * @return the name
@@ -99,7 +99,7 @@ public class Item {
 	//Method printing data by console
 	@Override
 	public String toString() {
-		return "Articulo [codigo =" + code + ", nombre =" + name + ", precio=" + price + ", fabricante=" + manufacturer + "]";
+		return "Articulo [codigo =" + id + ", nombre =" + name + ", precio=" + price + ", fabricante=" + manufacturer + "]";
 	}
 	
 	
