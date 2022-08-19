@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Box {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//Find the last value and increment from final id of db
-	private int id;
+	private Long id;
 	
 	private int refNumber;
 
@@ -35,7 +35,7 @@ public class Box {
 	 * @param content
 	 * @param value
 	 */
-	public Box(int id, int refNumber, String content, int value) {
+	public Box(Long id, int refNumber, String content, int value) {
 		this.id = id;
 		this.refNumber = refNumber;
 		this.content = content;
@@ -47,14 +47,14 @@ public class Box {
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
