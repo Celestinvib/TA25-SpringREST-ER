@@ -36,10 +36,10 @@ DELETE    /api/fabricantes/{id}
 
 Articulos
 GET       /api/articulos
-POST      /api/fabricantes
-GET       /api/fabricantes/{id}
-PUT       /api/fabricantes/{id}
-DELETE    /api/fabricantes/{id}
+POST      /api/articulos
+GET       /api/articulos/{id}
+PUT       /api/articulos/{id}
+DELETE    /api/articulos/{id}
 ```
 #### URIs endpoints Ejercicio2 
 ```
