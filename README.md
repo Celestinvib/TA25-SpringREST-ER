@@ -4,7 +4,7 @@
 Debido a un error que creaba una columna de más en la tabla débil de la relación de 1 a N , he tenido que modificar algunas claves primarias solicitadas en el Ej2 y Ej3 , pasando estas a ser un campo normal y teniendo que poner un id autoincremental como PK para que Spring no diese problemas.
 
 ### URIs endpoints:
-#### URIs endpoints Ejercicio1  -> https://cka-ta25-ex1.herokuapp.com/
+#### URIs endpoints Ejercicio1  -> https://cka-ta25-ex1.herokuapp.com
 ```
 Fabricantes
 GET       /api/fabricantes
@@ -20,7 +20,7 @@ GET       /api/articulos/{id}
 PUT       /api/articulos/{id}
 DELETE    /api/articulos/{id}
 ```
-#### URIs endpoints Ejercicio2 -> http://cka-ta25-ex2.herokuapp.com/
+#### URIs endpoints Ejercicio2 -> http://cka-ta25-ex2.herokuapp.com
 ```
 Departamentos
 GET       /api/departamentos
@@ -36,7 +36,7 @@ GET       /api/empleados/{id}
 PUT       /api/empleados/{id}
 DELETE    /api/empleados/{id}
 ```
-#### URIs endpoints Ejercicio3 -> https://cka-ta25-ex3.herokuapp.com/
+#### URIs endpoints Ejercicio3 -> https://cka-ta25-ex3.herokuapp.com
 ```
 Almacenes
 GET       /api/almacenes
@@ -52,7 +52,7 @@ GET       /api/cajas/{id}
 PUT       /api/cajas/{id}
 DELETE    /api/cajas/{id}
 ```
-#### URIs endpoints Ejercicio4 -> https://cka-ta25-ex4.herokuapp.com/
+#### URIs endpoints Ejercicio4 -> https://cka-ta25-ex4.herokuapp.com
 ```
 Peliculas
 GET       /api/peliculas
