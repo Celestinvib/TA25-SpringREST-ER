@@ -27,8 +27,8 @@ public class Warehouse {
 	
 	private int capacity; 
 	
-	 @OneToMany
-	 @JoinColumn(name="id")
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "warehouse")
 	 private List<Box> box;	
 	 
 	 /**Constructors */
