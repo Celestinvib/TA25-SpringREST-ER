@@ -35,11 +35,11 @@ public class WarehouseController {
 	}
 	
 	@GetMapping("/almacenes/{id}")
-	public Warehouse warehouseXID(@PathVariable(name="code") Long code) {
+	public Warehouse warehouseXID(@PathVariable(name="id") Long id) {
 		
 		Warehouse warehouse_xcode= new Warehouse();
 		
-		warehouse_xcode= warehouseServiceImpl.warehouseXID(code);
+		warehouse_xcode= warehouseServiceImpl.warehouseXID(id);
 		
 		System.out.println("Almacen XID: "+warehouse_xcode);
 		
@@ -47,12 +47,12 @@ public class WarehouseController {
 	}
 	
 	@PutMapping("/almacenes/{id}")
-	public Warehouse updateWarehouse(@PathVariable(name="code")Long code,@RequestBody Warehouse warehouse) {
+	public Warehouse updateWarehouse(@PathVariable(name="id")Long id,@RequestBody Warehouse warehouse) {
 		
 		Warehouse warehouseSelected= new Warehouse();
 		Warehouse warehouseUpdated = new Warehouse();
 		
-		warehouseSelected= warehouseServiceImpl.warehouseXID(code);
+		warehouseSelected= warehouseServiceImpl.warehouseXID(id);
 		
 		warehouseSelected.setPlace(warehouse.getPlace());
 		warehouseSelected.setCapacity(warehouse.getCapacity());
@@ -65,7 +65,7 @@ public class WarehouseController {
 	}
 	
 	@DeleteMapping("/almacenes/{id}")
-	public void deleteWarehouse(@PathVariable(name="code")Long code) {
-		warehouseServiceImpl.deleteWarehouse(code);
+	public void deleteWarehouse(@PathVariable(name="id")Long id) {
+		warehouseServiceImpl.deleteWarehouse(id);
 	}	
 }
