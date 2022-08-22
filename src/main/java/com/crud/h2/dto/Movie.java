@@ -24,8 +24,8 @@ public class Movie {
 	
 	private int ageRating;
 	
-    @OneToMany
-    @JoinColumn(name="code")
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "movie")
     private List<Room> room;	
     
     /**Constructors */
