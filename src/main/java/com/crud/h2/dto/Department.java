@@ -27,8 +27,8 @@ public class Department {
 	
 	private int budget;
 
-    @OneToMany
-    @JoinColumn(name="id") 
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
     private List<Employee> employee;
 
     /**Constructors */
