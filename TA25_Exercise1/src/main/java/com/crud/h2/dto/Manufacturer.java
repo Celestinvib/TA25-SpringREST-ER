@@ -27,8 +27,8 @@ public class Manufacturer {
 	
 	private String name;
 	
-    @OneToMany
-    @JoinColumn(name="id")
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "manufacturer")
     private List<Item> item;
 
 	/**Constructors */
